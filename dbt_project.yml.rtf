@@ -1,0 +1,65 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red223\green225\blue230;\red79\green123\blue61;\red14\green18\blue29;
+\red54\green192\blue160;\red194\green126\blue101;\red167\green197\blue152;\red212\green212\blue212;}
+{\*\expandedcolortbl;;\cssrgb\c89804\c90588\c92157;\cssrgb\c37647\c54510\c30588;\cssrgb\c6667\c9412\c15294;
+\cssrgb\c23922\c78824\c69020;\cssrgb\c80784\c56863\c47059;\cssrgb\c70980\c80784\c65882;\cssrgb\c86275\c86275\c86275;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \cb4 \strokec3 # Name your project! Project names should contain only lowercase characters\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 # and underscores. A good package name should reflect your organization's\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 # name or the intended use of these models\cf2 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb4 \strokec5 name\cf2 \strokec2 : \cf6 \strokec6 'FudgemartV3'\cf2 \cb1 \strokec2 \
+\cf5 \cb4 \strokec5 version\cf2 \strokec2 : \cf6 \strokec6 '1.0.0'\cf2 \cb1 \strokec2 \
+\cf5 \cb4 \strokec5 config-version\cf2 \strokec2 : \cf7 \strokec7 2\cf2 \cb1 \strokec2 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 \cb4 \strokec3 # This setting configures which "profile" dbt uses for this project.\cf2 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb4 \strokec5 profile\cf2 \strokec2 : \cf6 \strokec6 'default'\cf2 \cb1 \strokec2 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 \cb4 \strokec3 # These configurations specify where dbt should look for different types of files.\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 # The `model-paths` config, for example, states that models in this project can be\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 # found in the "models/" directory. You probably won't need to change these!\cf2 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb4 \strokec5 model-paths\cf2 \strokec2 : \cf8 \strokec8 [\cf6 \strokec6 "models"\cf8 \strokec8 ]\cf2 \cb1 \strokec2 \
+\cf5 \cb4 \strokec5 analysis-paths\cf2 \strokec2 : \cf8 \strokec8 [\cf6 \strokec6 "analyses"\cf8 \strokec8 ]\cf2 \cb1 \strokec2 \
+\cf5 \cb4 \strokec5 test-paths\cf2 \strokec2 : \cf8 \strokec8 [\cf6 \strokec6 "tests"\cf8 \strokec8 ]\cf2 \cb1 \strokec2 \
+\cf5 \cb4 \strokec5 seed-paths\cf2 \strokec2 : \cf8 \strokec8 [\cf6 \strokec6 "seeds"\cf8 \strokec8 ]\cf2 \cb1 \strokec2 \
+\cf5 \cb4 \strokec5 macro-paths\cf2 \strokec2 : \cf8 \strokec8 [\cf6 \strokec6 "macros"\cf8 \strokec8 ]\cf2 \cb1 \strokec2 \
+\cf5 \cb4 \strokec5 snapshot-paths\cf2 \strokec2 : \cf8 \strokec8 [\cf6 \strokec6 "snapshots"\cf8 \strokec8 ]\cf2 \cb1 \strokec2 \
+\
+\cf5 \cb4 \strokec5 target-path\cf2 \strokec2 : \cf6 \strokec6 "target"\cf2 \strokec2   \cf3 \strokec3 # directory which will store compiled SQL files\cf2 \cb1 \strokec2 \
+\cf5 \cb4 \strokec5 clean-targets\cf2 \strokec2 :         \cf3 \strokec3 # directories to be removed by `dbt clean`\cf2 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb4   - \cf6 \strokec6 "target"\cf2 \cb1 \strokec2 \
+\cb4   - \cf6 \strokec6 "dbt_packages"\cf2 \cb1 \strokec2 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 \cb4 \strokec3 # Configuring models\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 # Full documentation: https://docs.getdbt.com/docs/configuring-models\cf2 \cb1 \strokec2 \
+\
+\cf3 \cb4 \strokec3 # In dbt, the default materialization for a model is a view. This means, when you run \cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 # dbt run or dbt build, all of your models will be built as a view in your data platform. \cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 # The configuration below will override this setting for models in the example folder to \cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 # instead be materialized as tables. Any models you add to the root of the models folder will \cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 # continue to be built as views. These settings can be overridden in the individual model files\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 # using the `\{\{ config(...) \}\}` macro.\cf2 \cb1 \strokec2 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb4 \strokec5 models\cf2 \strokec2 :\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb4   \cf5 \strokec5 fudgemart_v3\cf2 \strokec2 :\cb1 \
+\cb4     \cf5 \strokec5 +materializes\cf2 \strokec2 : \cf6 \strokec6 table\cf2 \cb1 \strokec2 \
+\cb4     \cf5 \strokec5 databse\cf2 \strokec2 : \cf6 \strokec6 raw\cf2 \cb1 \strokec2 \
+\cb4     \cf5 \strokec5 +schema\cf2 \strokec2 : \cf6 \strokec6 fudgemart_v3\cf2 \cb1 \strokec2 \
+\
+}
